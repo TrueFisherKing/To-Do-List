@@ -18,7 +18,9 @@ $("document").ready(function(){
       $(".list").append('<li><span><i class="fa fa-trash" aria-hidden="true"></i> </span>' + todoText+ '</li>');
     }
   });
-$(".fa-plus").on("click", function(){
+$("h1 i").on("click", function(){
+  $(this).toggleClass("fa-navicon");
+  $(this).toggleClass("fa-times");
     $("input[type='text']").fadeToggle(100);
 });
 });
