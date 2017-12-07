@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -11,21 +12,21 @@ html, body {
 body {
   background: #8e9eab;
   background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);
+  background: -webkit-gradient(linear, left bottom, left top, from(#eef2f3), to(#8e9eab));
+  background: -webkit-linear-gradient(bottom, #eef2f3, #8e9eab);
+  background: -o-linear-gradient(bottom, #eef2f3, #8e9eab);
   background: linear-gradient(to top, #eef2f3, #8e9eab);
   font-family: 'Bad Script', cursive;
 }
 
-.container {
-  background: #eee;
-  border: 1px solid #777;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-  margin: 100px auto;
-  width: 500px;
-}
-
-.completed {
-  color: #ddd;
-  text-decoration: line-through;
+h1 {
+  background: #555;
+  color: #fff;
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
 }
 
 input[type="text"] {
@@ -43,14 +44,19 @@ input:focus {
   border: 3px solid #555;
 }
 
-h1 {
-  background: #555;
-  color: #fff;
-  font-size: 2em;
-  font-weight: normal;
-  margin: 0;
-  padding: 10px 20px;
-  text-transform: uppercase;
+.container {
+  background: #eee;
+  border: 1px solid #777;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+  max-width: 768px;
+  width: 90%;
+}
+
+.completed {
+  color: #ddd;
+  text-decoration: line-through;
 }
 
 .fa-plus {
@@ -69,7 +75,8 @@ h1 {
   border-top: 1px solid #555;
   color: #777;
   cursor: pointer;
-  height: 40px line-height: 40px;
+  height: 40px;
+  line-height: 40px;
 }
 
 .list li:nth-child(odd) {
@@ -83,12 +90,21 @@ h1 {
   height: 40px;
   text-align: center;
   margin-right: 20px;
-  opacity: 0;
-  width: 0px;
+  opacity: 1;
+  width: 40px;
+  -webkit-transition: width linear 0.1s;
+  -o-transition: width linear 0.1s;
   transition: width linear 0.1s;
 }
 
 .list li:hover span {
   opacity: 1;
   width: 40px;
+}
+
+@media screen and (min-width: 800px) {
+  .list span {
+    opacity: 0;
+    width: 0px;
+  }
 }
