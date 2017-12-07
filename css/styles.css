@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,23 +9,86 @@ html, body {
 }
 
 body {
-  background: rgba(170, 0, 255, 1);
-  background: -moz-linear-gradient(top, rgba(170, 0, 255, 1) 0%, rgba(255, 170, 0, 1) 50%, rgba(0, 238, 255, 1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(170, 0, 255, 1)), color-stop(50%, rgba(255, 170, 0, 1)), color-stop(100%, rgba(0, 238, 255, 1)));
-  background: -webkit-linear-gradient(top, rgba(170, 0, 255, 1) 0%, rgba(255, 170, 0, 1) 50%, rgba(0, 238, 255, 1) 100%);
-  background: -o-linear-gradient(top, rgba(170, 0, 255, 1) 0%, rgba(255, 170, 0, 1) 50%, rgba(0, 238, 255, 1) 100%);
-  background: -ms-linear-gradient(top, rgba(170, 0, 255, 1) 0%, rgba(255, 170, 0, 1) 50%, rgba(0, 238, 255, 1) 100%);
-  background: linear-gradient(to bottom, rgba(170, 0, 255, 1) 0%, rgba(255, 170, 0, 1) 50%, rgba(0, 238, 255, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa00ff', endColorstr='#00eeff', GradientType=0);
+  background: #8e9eab;
+  background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);
+  background: linear-gradient(to top, #eef2f3, #8e9eab);
+  font-family: 'Bad Script', cursive;
 }
 
 .container {
   background: #eee;
+  border: 1px solid #777;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
   width: 500px;
-  margin: 0 auto;
 }
 
 .completed {
   color: #ddd;
   text-decoration: line-through;
+}
+
+input[type="text"] {
+  background: #eee;
+  font-size: 1.5em;
+  border: 0;
+  border: 3px solid rgba(0, 0, 0, 0);
+  padding: 10px 15px 10px 20px;
+  width: 100%;
+}
+
+input:focus {
+  background: #f2f2f2;
+  outline: none;
+  border: 3px solid #555;
+}
+
+h1 {
+  background: #555;
+  color: #fff;
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.fa-plus {
+  float: right;
+  margin-top: 15px;
+}
+
+.list {
+  font-size: 1.2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  border-top: 1px solid #555;
+  color: #777;
+  cursor: pointer;
+  height: 40px line-height: 40px;
+}
+
+.list li:nth-child(odd) {
+  background: #fff;
+}
+
+.list span {
+  background: #e74c3c;
+  color: #fff;
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  margin-right: 20px;
+  opacity: 0;
+  width: 0px;
+  transition: width linear 0.1s;
+}
+
+.list li:hover span {
+  opacity: 1;
+  width: 40px;
 }
